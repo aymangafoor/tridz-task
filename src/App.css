@@ -17,6 +17,12 @@
   background-color: red;
   align-content: center;
   }
+  @media screen and (max-width: 768px) {
+    .tab2{
+      visibility: hidden;
+      display: none;
+    }
+  }
 .tab1{
     background-color:white;
     display: flex;
