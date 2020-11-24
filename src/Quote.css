@@ -1,0 +1,68 @@
+.quote{
+    background-color:white;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100ch;
+    height: 40vh;
+    
+}
+.heading{
+    color:red;
+    font-weight: bold;
+    font-size: large;
+}
+.back{
+    text-decoration: none;
+    color:red;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.firstrow{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.first{
+    width: 25%;
+}
+.select{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; 
+}
+.selects{
+    width: 48%;
+}
+.last{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.requirement{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:20vh;
+}
+.submit{
+    color: red;
+    background-color: white;
+    font-weight: bold;
+    border-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
