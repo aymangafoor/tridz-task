@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import ReactPlayer from "react-player";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch, withRouter} from "react-router-dom";
 import Quote from './Quote'
 import './App.css'
 import play from './images/play.png'
 class App extends Component {
+  state={
+    color: 1
+  }
+  changeOpacity = color =>{
+    this.setState({color})
+  }
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{opacity: this.state.color}}>
         <BrowserRouter>
           <div className='tab1'>
             <Link className='link' to="/trading">Trading Division</Link>
             <Link className='link' to="/project">Projects Division</Link>
             <Link className='link' to="/switch">Switchgears Division</Link>
-            <Link className='linkquote' to="/getquote">Get a Quote</Link>
+            <Link className='linkquote' to="/getquote" onClick={() => this.changeOpacity("0.8")}>Get a Quote</Link>
           </div>
         </BrowserRouter>
         <BrowserRouter>
@@ -30,7 +36,7 @@ class App extends Component {
           </div>
           <div className='center'>
             <Switch>
-              <Route path='/getquote' component={Quote} />
+              <Route exact path='/getquote' component={withRouter(Quote)} />
             </Switch>
           </div>
 
@@ -40,6 +46,9 @@ class App extends Component {
             className='react-player'
             light={true}
             controls
+            playing
+            height='100%'
+            width='100%'
             playIcon={<img src={play} alt='play'/>}
             url="https://www.youtube.com/watch?v=iYn9fFQoRJU"
           />

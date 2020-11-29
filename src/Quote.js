@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link ,withRouter} from "react-router-dom";
 import './Quote.css'
 class Quote extends Component {
     constructor(props){
@@ -9,7 +10,7 @@ class Quote extends Component {
         phone:null,
         section:null,
         storage:null,
-        description:null
+        description:null,
 
     }
     this.store = this.store.bind(this);
@@ -29,7 +30,7 @@ class Quote extends Component {
         return (
             <div className='quote'>
                 <form onSubmit={this.show}>
-                <a href='/' className='back'>X</a>
+                <Link to='/' className='back'>X</Link>
                 <label className='heading'>Get a quote</label>
                 <div className='firstrow'>
                     <input type='text' value={this.state.name} name='name' className='first' placeholder='Name'
@@ -40,25 +41,30 @@ class Quote extends Component {
                     onChange={this.store}></input>
                 </div>
                 <div className='select'>
-                    <select defaultValue='Section' value={this.state.section} name='section' className='selects' placeholder='Section'
+                    <select defaultValue='' value={this.state.section} name='section' className='selects'
                     onChange={this.store}>
-                        <option value="none">Section</option>
+                        <option  hidden value="none">Section</option>
                         <option value="section A">Section A</option>
                         <option value="section B">Section B</option>
                         <option value="section C">Section C</option>
                     </select>
-                    <select className='selects' value={this.state.storage} name='storage' placeholder='Store Area'>
-                        <option value="none">Storage Area</option>
+                    <select className='selects' value={this.state.storage} name='storage' defaultValue=""
+                    onChange={this.store}>
+                        <option hidden value="none">Storage Area</option>
                         <option value="Storage Area 1">Storage Area 1</option>
                         <option value="Storage Area 2">Storage Area 2</option>
                     </select>
                 </div>
                 <div className='last'>
-                <input type='textarea' value={this.state.description} name='description' className='requirement' placeholder='Requirement'></input>
+                <input type='text' value={this.state.description} name='description' className='requirement' placeholder='Requirement'
+                onChange={this.store}></input>
                 </div>
-            <input type='submit' className='submit' value='Send'></input>
+                <div style={{display: "flex", justifyContent: 'flex-end'}}>
+                <input type='submit' className='submit' value='Send'></input>
+                </div>
+            
                 </form>
             </div>
         )
     }
-} export default Quote
+} export default withRouter(Quote)

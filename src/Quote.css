@@ -1,13 +1,14 @@
 .quote{
     background-color:white;
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100ch;
-    height: 40vh;
-    
+    padding: 20px;
+    vertical-align: auto;
+    position: absolute;
+    opacity: 40px;
+    column-fill: auto;
+    margin-top: 270px;
+    box-shadow: 2px 2px 2px 2px;
+    z-index: 9;
+    width: 80%;
 }
 .heading{
     color:red;
@@ -24,15 +25,18 @@
     justify-content: flex-end;
 }
 .firstrow{
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
 .first{
-    width: 25%;
+    width: 32%;
+    height: 30px;
 }
 .select{
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -40,13 +44,15 @@
 }
 .selects{
     width: 48%;
+    height: 30px;
 }
 .last{
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
+    margin-bottom: 10px;
 }
 .requirement{
     display: flex;
@@ -61,8 +67,4 @@
     background-color: white;
     font-weight: bold;
     border-color: red;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
 }
